@@ -64,7 +64,7 @@ flowchart TD
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/timedoor-book-case.git
+   git clone https://github.com/geraldhd/timedoor-book-case.git
    cd timedoor-book-case
    ```
 
