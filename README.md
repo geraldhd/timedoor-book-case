@@ -1,9 +1,3 @@
-Oke, aku tambahin **flow diagram** di README biar lebih visual dan menarik. Kita bisa pakai **Mermaid diagram** karena GitHub langsung bisa render.
-
-Berikut versi yang sudah ditambahkan:
-
----
-
 # 📚 Timedoor Backend Programming Exam – Laravel Bookstore Project
 
 ## 📖 About This Project
@@ -121,8 +115,3 @@ flowchart TD
 * **No Caching:** The project does **not** use any form of caching (Laravel cache, Redis, query caching, etc.) to ensure all queries run directly from the database for evaluation purposes.
 * **Database:** This project uses **MySQL** as the only supported database engine.
 * **No SQL Dump:** There is **no** `.sql` or MySQL dump file included. All data is generated dynamically using Laravel's seeder system via `php artisan migrate --seed`.
-
----
-
-Kalau kamu mau, aku bisa sekalian **tambahkan screenshot halaman Book List, Top Authors, dan Input Rating** ke README ini supaya penilainya bisa langsung lihat hasil UI-nya tanpa run project.
-Mau aku buatkan screenshot section itu?
