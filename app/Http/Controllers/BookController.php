@@ -29,7 +29,8 @@ class BookController extends Controller
         $books = $query->orderByDesc('ratings_avg_rating')
                        ->paginate($perPage);
 
+        info("Book list accessed. Search: " . ($request->search ?? 'none') . ", Per page: {$perPage}, Total: {$books->total()}");
+
         return view('books.index', compact('books', 'perPage'));
     }
 }
-

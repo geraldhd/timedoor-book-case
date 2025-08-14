@@ -16,6 +16,8 @@ class AuthorController extends Controller
             ->take(10)
             ->get();
 
+        info("Top Authors page accessed. Showing top {$authors->count()} authors.");
+
         return view('authors.top', compact('authors'));
     }
 }
