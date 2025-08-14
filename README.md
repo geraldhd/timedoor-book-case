@@ -1,13 +1,3 @@
-Oke, saya akan buatkan README yang rapi, jelas, dan menarik, berisi:
-
-1. **Ringkasan project** (apa saja yang sudah kita buat dan fiturnya).
-2. **Requirement & cara menjalankan** project ini.
-
-Berikut draft README-nya:
-
----
-
-````markdown
 # 📚 Book Rating Management System
 
 A Laravel-based web application to manage books, authors, and ratings with a clean, user-friendly interface.  
@@ -63,8 +53,8 @@ Before running the project, make sure you have:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/book-rating-system.git
-   cd book-rating-system
+   git clone https://github.com/geraldhd/timedoor-book-case.git
+   cd timedoor-book-case
 ````
 
 2. **Install PHP dependencies**
@@ -143,15 +133,6 @@ Before running the project, make sure you have:
 
 ---
 
-## 💡 Future Improvements
-
-* User authentication for secure rating submissions
-* Rating history per user
-* Export data to CSV/Excel
-* API endpoints for mobile integration
-
----
-
 ## 🤝 Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
@@ -163,10 +144,4 @@ to discuss what you would like to change.
 
 This project is licensed under the **MIT License**.
 
-```
-
----
-
-Kalau mau, saya bisa **tambahkan screenshot UI** langsung di README ini biar lebih menarik.  
-Mau saya tambahkan gambarnya juga?
 ```
