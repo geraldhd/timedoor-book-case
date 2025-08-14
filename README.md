@@ -1,61 +1,78 @@
-# 📚 Book Rating Management System
+Oke, aku tambahin **flow diagram** di README biar lebih visual dan menarik. Kita bisa pakai **Mermaid diagram** karena GitHub langsung bisa render.
 
-A Laravel-based web application to manage books, authors, and ratings with a clean, user-friendly interface.  
-Designed for easy browsing, filtering, and rating of books, while keeping the data structured and scalable.
-
----
-
-## ✨ Features
-
-### 📖 Book Management
-- View list of books with:
-  - Title
-  - Author
-  - Average rating (calculated dynamically)
-  - Total votes
-- Search by book title or author name
-- Pagination with custom items per page
-- Quick navigation to **Authors** and **Ratings** pages
-
-### 👑 Author Management
-- View top 10 authors (with rating > 5)
-- See total votes each author has received
-- Direct navigation back to **Book List**
-
-### ⭐ Rating Management
-- Select an author, then dynamically filter books written by that author
-- Rate books from 1 to 10
-- Submit ratings easily with clean form UI
-- Navigation to **Books**, **Authors**, and **Ratings** pages
-
-### 🎨 UI/UX
-- Fully responsive design using **Bootstrap 5**
-- Consistent layout across pages
-- Clean table formatting and form styling
-- Simple and intuitive navigation
+Berikut versi yang sudah ditambahkan:
 
 ---
 
-## 🛠️ Requirements
+# 📚 Timedoor Backend Programming Exam – Laravel Bookstore Project
 
-Before running the project, make sure you have:
+## 📖 About This Project
 
-- **PHP** `>= 8.1`
-- **Composer** `>= 2.x`
-- **Laravel** `>= 10.x`
-- **MySQL** (or any supported database)
-- **Node.js** `>= 18.x` & **npm** (for asset compilation)
-- **Git** (optional, for cloning)
+This is a Laravel-based bookstore management system created for the **Timedoor Backend Programming Exam**.
+The system allows listing books with filtering options, showing the top 10 authors based on ratings, and submitting ratings for books.
+
+Data is **auto-generated** using Laravel seeders, so once you set up the project, you will immediately have:
+
+* **1,000** fake authors
+* **3,000** fake book categories
+* **100,000** fake books
+* **500,000** fake ratings
 
 ---
 
-## 🚀 Installation
+## 🚀 Features Overview
+
+### **1. Book List with Filters**
+
+* Displays the **top 10 books** with the highest average ratings by default.
+* Search books by **title** or **author name**.
+* Filter the number of results displayed per page (**10 to 100**, increment of 10).
+* Shows **average rating** and **total votes** for each book.
+
+### **2. Top 10 Most Famous Authors**
+
+* Authors ranked based on the **total number of votes** for their books.
+* Only counts votes from ratings **greater than 5**.
+* Displays author name and total votes.
+
+### **3. Input Rating**
+
+* Allows selecting a book (filtered by its author).
+* Rating scale from **1 to 10**.
+* After successful submission, user is redirected back to the **Book List** page.
+
+---
+
+## 🔄 System Flow Diagram
+
+```mermaid
+flowchart TD
+    A[📖 Book List Page] -->|Click 'Top Authors'| B[👨‍💼 Top Authors Page]
+    A -->|Click 'Rate a Book'| C[⭐ Input Rating Page]
+    C -->|Submit Rating| A
+    B -->|Back to Book List| A
+```
+
+---
+
+## ⚙️ Requirements
+
+* **PHP** ≥ 8.1
+* **Laravel** ≥ 10.x
+* **MySQL / MariaDB** (no other DB supported)
+* Composer
+* Node.js & NPM (optional if you want to compile assets, but not required for this test)
+
+---
+
+## 📦 Installation Steps
 
 1. **Clone the repository**
+
    ```bash
-   git clone https://github.com/geraldhd/timedoor-book-case.git
+   git clone https://github.com/your-username/timedoor-book-case.git
    cd timedoor-book-case
-````
+   ```
 
 2. **Install PHP dependencies**
 
@@ -63,85 +80,49 @@ Before running the project, make sure you have:
    composer install
    ```
 
-3. **Install Node.js dependencies**
-
-   ```bash
-   npm install
-   ```
-
-4. **Setup environment**
+3. **Copy `.env` file and set database credentials**
 
    ```bash
    cp .env.example .env
    ```
 
-   Update `.env` file with your database credentials:
+   Update your `.env`:
 
-   ```env
+   ```
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=your_database
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
+   DB_DATABASE=your_database_name
+   DB_USERNAME=your_database_user
+   DB_PASSWORD=your_database_password
    ```
 
-5. **Generate application key**
-
-   ```bash
-   php artisan key:generate
-   ```
-
-6. **Run migrations and seeders**
+4. **Run migrations and seed the database**
+   *(This will automatically generate all fake data for testing)*
 
    ```bash
    php artisan migrate --seed
    ```
 
-   > The seeder will populate books, authors, and ratings data automatically.
-
-7. **Build frontend assets**
-
-   ```bash
-   npm run dev
-   ```
-
-8. **Run the server**
+5. **Start the development server**
 
    ```bash
    php artisan serve
    ```
 
-   Open the app in your browser:
-   **[http://127.0.0.1:8000](http://127.0.0.1:8000)**
+6. **Access the app**
+   Open [http://localhost:8000](http://localhost:8000) in your browser.
 
 ---
 
-## 📂 Pages Overview
+## 📝 Important Notes for Timedoor Test
 
-| Page           | Route             | Description                                                     |
-| -------------- | ----------------- | --------------------------------------------------------------- |
-| 📚 Book List   | `/books`          | View and filter books, see ratings, and navigate to other pages |
-| 👑 Authors     | `/authors`        | View top 10 authors with rating > 5                             |
-| ⭐ Input Rating | `/ratings/create` | Select an author, pick a book, and submit a rating              |
-
----
-
-## 🖼️ UI Preview
-
-*(Add screenshots here if available)*
+* **Preloaded Data:** When the application first opens in the list view, it will already display the data provided via Laravel seeders. No manual data input is required.
+* **No Caching:** The project does **not** use any form of caching (Laravel cache, Redis, query caching, etc.) to ensure all queries run directly from the database for evaluation purposes.
+* **Database:** This project uses **MySQL** as the only supported database engine.
+* **No SQL Dump:** There is **no** `.sql` or MySQL dump file included. All data is generated dynamically using Laravel's seeder system via `php artisan migrate --seed`.
 
 ---
 
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
-```
+Kalau kamu mau, aku bisa sekalian **tambahkan screenshot halaman Book List, Top Authors, dan Input Rating** ke README ini supaya penilainya bisa langsung lihat hasil UI-nya tanpa run project.
+Mau aku buatkan screenshot section itu?
